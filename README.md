@@ -1,10 +1,10 @@
 # Data processing tools for csv file
-## Libraries
+## Usages
+### Libraries
 - `tool_painter.py`: A tool for data visualization
 - `tool_reader.py`: A tool for reading `csv` file with user-specified headers
 - `tool_writer.py`: A tool for writing out data in `csv` format
-
-## Explanation
+### Applications
 - `main_gnss_data_preprocessor.py`: An example of `tool_reader.py` and `tool_writer.py`
   - Functionality: A parser to extract required GNSS data from the input file
 - `main_xml_to_csv.py`: An example of `tool_reader.py` and `tool_writer.py`
@@ -33,6 +33,7 @@
       python3 main_vis_sdmap_query.py -i ../test/test1_map.csv -u ../test/test1_data.csv --sampling_rate=100 -s <start-timestamp> -e <end-timestamp>
     ```
   - Results
+
     a) Overall view
 
     ![image](https://github.com/yzJean/csv_processing_tools/assets/59329465/b59ae00c-541d-4b3a-af08-d10d284a772c)
