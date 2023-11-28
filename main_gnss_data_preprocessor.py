@@ -17,12 +17,12 @@ Expected results: A processed file named after the input file and sharing the sa
                  input is outputed to the input directory.
 
 Command:
-python3 main_gnss_file_processor.py -i <dir-to-*Gnss.csv>
+python3 main_gnss_file_processor.py -i <dir-to-*GNSS.csv>
 
 For example,
-python3 main_gnss_data_preprocessor.py -i ../test/test_map_data/20230605_TPE2_autopipe/rawData_gnss/NRU110VGnss.csv
+python3 main_gnss_data_preprocessor.py -i ./GNSS.csv
 
-Output file: /NRU110V/20230605_TPE2_autopipe/rawData/NRU110VGnss_processed.csv
+Output file: ./GNSS_processed.csv
 """
 # ========================
 # parsing options setup
@@ -39,12 +39,12 @@ def options():
     # ====================================
     # file input of relocalization results
     # ====================================
-    p.add_option('--in_gnss_file_dir', '-i', default='/dsd/NRU110V/20230605_TPE2_autopipe/rawData/NRU110VGnss.csv',
-                 help='This is a mandatory option. It is recommended to use with the NRU110V/<route-data>/rawData/NRU110VGnss.csv')
+    p.add_option('--in_gnss_file_dir', '-i', default='./GNSS.csv',
+                 help='This is a mandatory option. It is recommended to use with the GNSS.csv')
     p.add_option('--start_timestamp', '-s', default='-1',
-                 help='This is a optoinal option. It is recommended to select a start timestamp from the NRU110V/<route-data>/rawData/NRU110VGnss.csv')
+                 help='This is a optoinal option. It is recommended to select a start timestamp from the GNSS.csv')
     p.add_option('--end_timestamp', '-e', default='-1',
-                 help='This is a optoinal option. It is recommended to select a end timestamp the NRU110V/<route-data>/rawData/NRU110VGnss.csv')
+                 help='This is a optoinal option. It is recommended to select a end timestamp the GNSS.csv')
     options, arguments = p.parse_args()
 
     in_gnss_file_dir = options.in_gnss_file_dir
@@ -53,7 +53,7 @@ def options():
 
     # check input argument
     if (not in_gnss_file_dir):
-        p.error("Directory to *Gnss.csv is empty, return")
+        p.error("Directory to *GNSS.csv is empty, return")
         return None, None, None
 
     if (start_timestamp > end_timestamp):

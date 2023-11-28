@@ -36,7 +36,7 @@ def numb_to_bool(option_numb):
 
 def options():
     p = optparse.OptionParser(usage=help_msg)
-    p.add_option('--in_xml_dir', '-i', default='./sdmap.osm',
+    p.add_option('--in_xml_dir', '-i', default='./map.osm',
                  help='This is a mandatory option.')
     options, arguments = p.parse_args()
 
@@ -46,7 +46,7 @@ def options():
 
     # check input arguments
     if (not in_xml_dir):
-        p.error("Directory to sdmap_*.csv is empty, return")
+        p.error("Directory to map_*.csv is empty, return")
         return None, None, None, None
 
     return in_xml_dir, display_modes_list
@@ -54,12 +54,12 @@ def options():
 # ========================
 # TODO: Parser and writer
 # ========================
-def parse_and_write(xml_file_dir, sdmap_name):
+def parse_and_write(xml_file_dir, map_name):
     # PARSE XML
     xml = ElementTree.parse(xml_file_dir)
     
     # create writer
-    csvfile = open(sdmap_name,'w',encoding='utf-8')
+    csvfile = open(map_name,'w',encoding='utf-8')
     csvfile_writer = csv.writer(csvfile)
 
     # ADD THE HEADER TO CSV FILE
@@ -120,9 +120,9 @@ def parse_and_write(xml_file_dir, sdmap_name):
 def main():
     in_xml_dir, display_modes_list = options()
     out_ext = ".csv"
-    sdmap_filename = os.path.splitext(in_xml_dir)[0] + "_area_sdmap" + out_ext
+    map_filename = os.path.splitext(in_xml_dir)[0] + "_area_map" + out_ext
     out_path = "./"
-    out_file_name = os.path.join(out_path,sdmap_filename)
+    out_file_name = os.path.join(out_path,map_filename)
     print("Writing file to ", out_file_name)
     parse_and_write(in_xml_dir, out_file_name)
 
