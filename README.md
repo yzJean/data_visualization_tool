@@ -15,14 +15,14 @@
 ## Examples
 - `main_gnss_data_preprocessor.py`
   ```
-    python3 main_gnss_data_preprocessor.py -i ../test/GNSS.csv
+    python3 main_gnss_data_preprocessor.py -i ../sample_data/GNSS.csv
   ``` 
   - Results: An output file `GNSS_processed.csv`
 
 - `main_vis_sdmap_query.py`
   1. Visualize a map
     ```
-      python3 main_vis_sdmap_query.py -i ../test/test1_map.csv -s <start-timestamp> -e <end-timestamp>
+      python3 main_vis_sdmap_query.py -i ../sample_data/test1_map.csv -s <start-timestamp> -e <end-timestamp>
     ```
     - Results
 
@@ -31,7 +31,7 @@
 
   2. Visualize matching results
     ```
-      python3 main_vis_sdmap_query.py -i ../test/test1_map.csv -u ../test/test1_data.csv --sampling_rate=100 -s <start-timestamp> -e <end-timestamp>
+      python3 main_vis_sdmap_query.py -i ../sample_data/test1_map.csv -u ../sample_data/test1_data.csv --sampling_rate=100 -s <start-timestamp> -e <end-timestamp>
     ```
   - Results
 
@@ -47,6 +47,6 @@
 
 - `main_xml_to_csv.py`
   ```
-    python3 main_xml_to_csv.py -i ../test/test2_map.osm
+    python3 main_xml_to_csv.py -i ../sample_data/test2_map.osm
   ```
   - Results: An output file `test2_map.csv`
