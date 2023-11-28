@@ -25,15 +25,20 @@
       python3 main_vis_sdmap_query.py -i ../test/test1_map.csv -s <start-timestamp> -e <end-timestamp>
     ```
     - Results
+
       ![image](https://github.com/yzJean/csv_processing_tools/assets/59329465/808b414b-f243-4068-a664-40198af83c25)
+
   2. Visualize matching results
     ```
-      python3 main_vis_sdmap_query.py -i ../test/test1_map.csv -u test/test1_data.csv --sampling_rate=100 -s <start-timestamp> -e <end-timestamp>
+      python3 main_vis_sdmap_query.py -i ../test/test1_map.csv -u ../test/test1_data.csv --sampling_rate=100 -s <start-timestamp> -e <end-timestamp>
     ```
   - Results
-    i) Overall view
+    a) Overall view
+
     ![image](https://github.com/yzJean/csv_processing_tools/assets/59329465/b59ae00c-541d-4b3a-af08-d10d284a772c)
-    ii) Matched & Unmatched
+
+    b) Matched & Unmatched
+
     ![image](https://github.com/yzJean/csv_processing_tools/assets/59329465/8d23a58e-c994-4df8-bc57-3fcee57fc936)
 
 - `main_xml_to_csv.py`
